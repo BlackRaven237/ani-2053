@@ -1,8 +1,10 @@
 ## Projets
 | Type | Nombre de projets |
 |------|-------------------|
-| StaticLib | 1 |
-| ConsoleApp | 2 |
+| StaticLib | 47 |
+| ConsoleApp | 66 |
+| TestSuite | 41 |
+| WindowedApp | 49 | 
 
 ## Chaines de compilation
 
@@ -11,7 +13,7 @@
 - gcc      Windows     x86_64
 
 ## Fichier de demarrage
-Start project: Game
+Start project: Sandbox
 
 ## Fichier racine du workspace
-Entry file: /home/coderaven/Downloads/jenga-2.8.0/Jenga/Exemples/09_multi_projects/09_multi_projects.jenga
+Entry file: /home/coderaven/Desktop/Nkentseu/Nkentseu.jenga
