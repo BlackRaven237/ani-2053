@@ -79,4 +79,10 @@ We obtain
 
 ## Comparison
 
-Comparing my result with that of chapter (_2641_ source files with _1193385_ lines of code), we can clearly see a huge difference which can be explained by the fact that i included `Header files`, `Build artefacts` and `Unit tests` in my analysis
+Comparing my result with that of chapter (_2641_ source files with _1193385_ lines of code), we can clearly see a huge difference which can be explained by the fact that i included:
+
+ - `Header files` - 2754 files with 802021 lines of code
+ - `Build artefacts` - Where a huge amount of these files sit
+ - `Unit tests`
+
+in my analysis.
