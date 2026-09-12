@@ -9,7 +9,7 @@ Build Order (5 projects):
   5. NKMath [STATIC_LIB] (depends: NKContainers, NKCore, NKMemory, NKPlatform)
 ```
 
-## `NKMath` Dependency Tree 
+## `NKMath` Dependency Graph
 ```bash    
     NKMath (depends: NKContainers, NKCore, NKMemory, NKPlatform)
       ↑ ↑ ↑ ↑
