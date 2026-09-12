@@ -304,22 +304,23 @@ Daemon
 Status: Not running
 ```
 
-## Projets
-| Type | Nombre de projets |
+## Projects
+| Kind | Number of projects |
 |------|-------------------|
-| StaticLib | 56 |
-| ConsoleApp | 86 |
-| TestSuite | 45 |
-| WindowedApp | 34 | 
-| Total | 221 |
-## Chaines de compilation
+| StaticLib | 60 |
+| ConsoleApp | 98 |
+| TestSuite | 60 |
+| WindowedApp | 55 | 
+| Total | 273 |
+
+## Toolchains
 
 - clang    Linux       x86_64
 - gcc      Linux       x86_64
 - gcc      Windows     x86_64
 
-## Fichier de demarrage
+## Starting project
 Start project: Sandbox
 
-## Fichier racine du workspace
+## Workspace root
 Entry file: /home/coderaven/Desktop/Nkentseu/Nkentseu.jenga
