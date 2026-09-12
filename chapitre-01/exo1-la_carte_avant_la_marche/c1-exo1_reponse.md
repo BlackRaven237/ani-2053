@@ -322,5 +322,5 @@ Status: Not running
 ## Starting project
 Start project: Sandbox
 
-## Workspace root
-Entry file: /home/coderaven/Desktop/Nkentseu/Nkentseu.jenga
+## Workspace root file
+Entry file: Nkentseu.jenga 
