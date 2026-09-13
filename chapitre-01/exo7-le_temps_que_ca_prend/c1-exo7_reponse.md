@@ -33,3 +33,27 @@ Status:         ✓ SUCCESS
 From the observations above, we can notice a huge time difference of `14.35s` which can be explained by the fact that `Jenga` doesn't recompiles files unless they have been modify.
 
 `Jenga` keeps track both of time(date) and signature (`.jenga_sig`) when a modification is been made to file in a project but in a specific manner, that is the last modification time is checked before signature and recompilation occurs only when both are changed(modified)
+
+Let's show this with a simple test case
+
+we build our project
+``` bash
+════════════════════════════════════════════════════════════════════════════════
+                                BUILD COMPLETED                                 
+════════════════════════════════════════════════════════════════════════════════
+Projects Built:  6/6
+Time:           1.68s
+Status:         ✓ SUCCESS
+════════════════════════════════════════════════════════════════════════════════
+```
+and obtain `1.68s`. Now, Let's add a space, save, delete it then save one more time
+``` bash
+════════════════════════════════════════════════════════════════════════════════
+                                BUILD COMPLETED                                 
+════════════════════════════════════════════════════════════════════════════════
+Projects Built:  6/6
+Time:           1.81s
+Status:         ✓ SUCCESS
+════════════════════════════════════════════════════════════════════════════════
+```
+We obtain `1.81s` which is of the same order as our 1st output
