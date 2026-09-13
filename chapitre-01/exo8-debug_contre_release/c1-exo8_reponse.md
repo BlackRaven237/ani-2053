@@ -47,7 +47,7 @@ Status:         ✓ SUCCESS
 
 | **Configuration**  | **Time needed to build**  | **Binary file size** |
 |--------------------|---------------------------|----------------------|
-| `Debug` | 13.41s | 940Kb |
+| `Debug` | 13.41s | 930Kb |
 |`Release` | 15.72s | 177Kb |
 
 
