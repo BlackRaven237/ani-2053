@@ -12,6 +12,7 @@ with project("MonEssai"):
 ```
 
 ## Adding project to `Nkentseu.jenga`
+Here, we are telling `Jenga` to include our project to the `Workspace`. Cause without it `Jenga` will not consider our project as existing.
 ``` py
     with include("Applications/MonEssai/MonEssai.jenga"):
 
@@ -381,3 +382,4 @@ Time:           0.35s
 Status:         ✓ SUCCESS
 ════════════════════════════════════════════════════════════════════════════════
 ```
+We can see i took exactly **`0.35s`** for our project to be built successfully
