@@ -30,4 +30,4 @@ Status:         ✓ SUCCESS
 ```
 
 # Conclusion
-From the observations above, we can notice a huge time difference of `14.35s` which can be explained by the fact that `jenga` doesn't recompiles files unless they have been modify (it keeps track of the last modification time for each file in a project).
+From the observations above, we can notice a huge time difference of `14.35s` which can be explained by the fact that `jenga` doesn't recompiles files unless they have been modify - it keeps track of the last modification time and signature (`.jenga_sig`) for each file in a project.
