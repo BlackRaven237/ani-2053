@@ -1,8 +1,16 @@
+## `src/main.cpp`
+``` cpp
+int main () {
+    return 42;
+}
+```
+
 ## `MonEssai.jenga`
 ``` py
 from Jenga import *
 
 with project("MonEssai"):
+    consoleapp()
     language("C++")
     cppdialect("C++17")
     location(".")
@@ -336,22 +344,7 @@ Using the command
 
 Result
 ``` bash
-
-╔══════════════════════════════════════════════════════════════════╗
-║                                                                  ║
-║                ██╗███████╗███╗   ██╗ ██████╗  █████╗             ║
-║                ██║██╔════╝████╗  ██║██╔════╝ ██╔══██╗            ║
-║                ██║█████╗  ██╔██╗ ██║██║  ███╗███████║            ║
-║           ██   ██║██╔══╝  ██║╚██╗██║██║   ██║██╔══██║            ║
-║           ╚█████╔╝███████╗██║ ╚████║╚██████╔╝██║  ██║            ║
-║            ╚════╝ ╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝            ║
-║                                                                  ║
-║             Multi-platform C/C++ Build System v2.8.0             ║
-║                                                                  ║
-╚══════════════════════════════════════════════════════════════════╝
-
 Loading workspace...
-[NKCode] ATTENTION : aucun wheel Jenga trouve (dist/*.whl) -> le paquet n'aura PAS de Jenga embarque, et les boutons Construire/Executer seront inoperants. Produisez-le avec ./cri.sh dans le depot Jenga.
 
 Configuration: Debug
 Target:        Linux x86_64
@@ -371,14 +364,14 @@ Build Order (1 projects):
 ✓ Built: Build/Bin/Debug-Linux/MonEssai/MonEssai
 
 ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
-│  ✓ Build Successful                                                             Time: 0.35s  │
+│  ✓ Build Successful                                                             Time: 0.43s  │
 └──────────────────────────────────────────────────────────────────────────────────────────────┘
 
 ════════════════════════════════════════════════════════════════════════════════
                                 BUILD COMPLETED                                 
 ════════════════════════════════════════════════════════════════════════════════
 Projects Built:  1/1
-Time:           0.35s
+Time:           0.43s
 Status:         ✓ SUCCESS
 ════════════════════════════════════════════════════════════════════════════════
 ```
