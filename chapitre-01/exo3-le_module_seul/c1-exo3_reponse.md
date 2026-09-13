@@ -21,3 +21,5 @@ Build Order (5 projects):
          ↑
     NKPlatform
 ```
+
+Now, let's stop for a while and imagine `NKPlatform` had to depend on `NKMath`, This is going to create a cycle (cyclic dependency) and the use of a `DAG` helps us avoid that, with it's second principle that stating it is impossible to move back to our starting/initial point thereby avoiding this situation.
