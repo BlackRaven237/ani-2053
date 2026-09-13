@@ -1,7 +1,7 @@
 ## `src/main.cpp`
 ``` cpp
 int main () {
-    return 42;
+    return 0;
 }
 ```
 
@@ -375,4 +375,4 @@ Time:           0.43s
 Status:         ✓ SUCCESS
 ════════════════════════════════════════════════════════════════════════════════
 ```
-We can see i took exactly **`0.35s`** for our project to be built successfully
+We can see i took exactly **`0.43s`** for our project to be built successfully
