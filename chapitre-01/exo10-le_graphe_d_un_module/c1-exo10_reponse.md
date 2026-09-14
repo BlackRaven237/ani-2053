@@ -159,6 +159,8 @@ From this it becomes much more easier to know the dependencies of the dependecie
 ## Conclusion
 From the DAG above we can see `Jenga` need to build exactly `15` project before `NKCanvas` and this can be shown in practice with the output below
 
+Also, The Use of a DAG permits us prevent execution to either move backward or get back to a starting point here (Acyclic property)
+
 ``` bash
 Loading workspace...
 [NKCode] ATTENTION : aucun wheel Jenga trouve (dist/*.whl) -> le paquet n'aura PAS de Jenga embarque, et les boutons Construire/Executer seront inoperants. Produisez-le avec ./cri.sh dans le depot Jenga.
