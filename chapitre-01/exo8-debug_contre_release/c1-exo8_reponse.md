@@ -54,7 +54,7 @@ Status:         ✓ SUCCESS
 # Conclusion
 
 From our observations above including that piece of code from `NKMath.jenga`, we can notice `Debug` and `Release` Configurations affect projects in completely different manners. 
-- Release, takes **`more time`** to build but provides an **`elegant`**, **`optimized`** and **`lighter`** binary file. 
+- Release, takes **`more time`** to build but provides a more **`optimized`** and **`lighter`** binary file. 
 - Debug, builds in **`less time`** but provides a **`heavier`** binary file.
 
 In `NKMath.jenga` from `lines 63 - 70` we get explicitly the lines evoking the current configuration state (`config:Debug` or `config:Release`) of our working project.
