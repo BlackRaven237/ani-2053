@@ -3,16 +3,14 @@ For this exercise, we will only work with **`math.h`** from the exercise 1.
 
 # Modification
 ### math.h
+Let's update this function to `math.h`
 ``` cpp
-#pragma once
-
-int add(int a, int b);
 int multiply(int a, int b);
 ```
 
 ### Git status
 ``` bash
-On branch master
+On branch main
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
@@ -29,7 +27,7 @@ git add math.h
 ### Git status
 
 ``` bash
-On branch master
+On branch main
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
         modified:   math.h
@@ -43,12 +41,12 @@ git commit -m "Adding new functions to math.h"
 ```
 ### Output
 ``` bash
-[master 361aa4f] Adding new functions to math.h
- 1 file changed, 4 insertions(+)
+[main 5551ce5] Adding new functions to math.h
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 ```
 ### Git status
 ``` bash
-On branch master
+On branch main
 nothing to commit, working tree clean
 ```
 
