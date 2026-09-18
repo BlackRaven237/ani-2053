@@ -37,11 +37,11 @@ Changes to be committed:
 
 ### Command
 ``` bash
-git commit -m "Adding new functions to math.h"
+git commit -m "Adding multiply(a, b) function to math.h"
 ```
 ### Output
 ``` bash
-[main 5551ce5] Adding new functions to math.h
+[main 7d76c76] Adding multiply(a, b) function to math.h
  1 file changed, 2 insertions(+), 1 deletion(-)
 ```
 ### Git status
@@ -51,4 +51,10 @@ nothing to commit, working tree clean
 ```
 
 # Comparison
-From the outputs above, we notice at each step that our file `math.h` moves to the `index(staged)` after `git add` and gets committed after `git commit`
+From the outputs above we could conclude:
+
+- Modifications made on our file `math.h` in the working directory that were known by `git` but not taken into account, left from the working directory to the `index(stage)` after a `git add`.
+
+- Also, we notice at `index` that our modifications finally got registered by `git` but were still not saved/stored by `git` to it's local repository. 
+
+- Then, after a `git commit` we could now see `git` saving our modifications made back from the working directory to it's local repository.
