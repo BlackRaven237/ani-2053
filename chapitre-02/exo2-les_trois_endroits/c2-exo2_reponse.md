@@ -130,3 +130,55 @@ nothing to commit, working tree clean
 ```
 
 Now both the local and remote repositories carries our modifications. 
+
+And finally let's interpret our last modification made on `math.h` using `git show` + the commit ID **`7346075`**
+
+``` bash
+git show 7346075
+```
+
+#### Output
+``` bash
+commit 734607596597845bb1a4474de56022debdb0e137 (HEAD -> main, origin/main)
+Author: Youmbi Bovan <youmbincbovan@gmail.com>
+Date:   Sat Sep 19 01:28:02 2026 +0100
+
+    Deleting divide(a, b) function to math.h
+
+diff --git a/math.h b/math.h
+index b418c37..488d0f5 100644
+commit 734607596597845bb1a4474de56022debdb0e137 (HEAD -> main, origin/main)
+Author: Youmbi Bovan <youmbincbovan@gmail.com>
+Date:   Sat Sep 19 01:28:02 2026 +0100
+
+    Deleting divide(a, b) function to math.h
+
+diff --git a/math.h b/math.h
+index b418c37..488d0f5 100644
+--- a/math.h
++++ b/math.h
+@@ -1,5 +1,4 @@
+ #pragma once
+ int add(int a, int b);
+ int substract(int a, int b);
+-int multiply(int a, int b);
+-int divide(int a, int b);
+\ No newline at end of file
++int multiply(int a, int b);
+\ No newline at end of file
+(END)
+```
+Let's explain the above output. 
+
+Usually on text files, each line ends with an invisible `return-to-line` symbol (**`\n`**) on linux or (**`\r\n`**) on windows. So the reason we obtain `2 suppressions [-]` for `1 insertion [+]` becomes obvious, Assuming a line wasn't ending with that symbol and that it was deleted `git` will check for a way to keep the text file as it was on the system.
+
+This situation is exactly what we are going cause we didn't end `math.h` with a blank space. So this is what `git` does under-the-hood and it is shown to us above by `diff`: 
+
+It deletes the line in question. In our case, `line 5` of `math.h` (the line containing `int divide(int a, int b)`) and notices it doesn't ends with the `return-to-line` character. But, the preceding line (`line 4`) had one. So it also deletes `line 4` and then inserts a copy of it, but this time around removes the `return-to-line` character. Thereby, resulting to the outcome below:
+
+``` bash
+[main 7346075] Deleting divide(a, b) function to math.h
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+```
+
+A solution to this situation is to always go to the line on each of your C/C++ files.
