@@ -133,20 +133,8 @@ Now both the local and remote repositories carries our modifications.
 
 And finally let's interpret our last modification made on `math.h` using `git show` + the commit ID **`7346075`**
 
-``` bash
-git show 7346075
-```
-
 #### Output
 ``` bash
-commit 734607596597845bb1a4474de56022debdb0e137 (HEAD -> main, origin/main)
-Author: Youmbi Bovan <youmbincbovan@gmail.com>
-Date:   Sat Sep 19 01:28:02 2026 +0100
-
-    Deleting divide(a, b) function to math.h
-
-diff --git a/math.h b/math.h
-index b418c37..488d0f5 100644
 commit 734607596597845bb1a4474de56022debdb0e137 (HEAD -> main, origin/main)
 Author: Youmbi Bovan <youmbincbovan@gmail.com>
 Date:   Sat Sep 19 01:28:02 2026 +0100
