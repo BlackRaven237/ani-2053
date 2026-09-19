@@ -248,4 +248,18 @@ Finally, using `git log --oneline --graph` we can now observe how the graph look
 * f21b247 Adding math.h to test project
 ```
 
-This confirms our above thoughts. The commit with ID **`d08686c`** has commit **`053d650`** from `test-branch` and commit **`f41d4e5`** from main as parent commits.
+This confirms our above thoughts. The commit with ID **`d08686c`** has commit **`053d650`** from `test-branch` and commit **`f41d4e5`** from main as parent commits. Also, we could just use the command `git log -1 --format=%p` followed by **`d08686c`** the commit ID
+
+``` bash
+ git log -1 --format=%p d08686c
+```
+
+To show that the commit **`d08686c`** has two parents commit
+``` bash
+f41d4e5 053d650
+```
+
+As compared to commit **`9686ad2`** that has only one parent (**`f21b247`**) if we use the same command with the ID **`9686ad2`** attached to it
+``` bash
+f21b247
+```
