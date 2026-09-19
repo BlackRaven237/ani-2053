@@ -5,6 +5,9 @@ For this exercise, we will only work with **`math.h`** from the exercise 1.
 ### math.h
 Let's update this function to `math.h`
 ``` cpp
+#pragma once
+int add(int a, int b);
+int substract(int a, int b);
 int multiply(int a, int b);
 ```
 
@@ -51,10 +54,79 @@ nothing to commit, working tree clean
 ```
 
 # Comparison
-From the outputs above we could conclude:
+From the outputs above we could observe:
 
 - Modifications made on our file `math.h` in the working directory that were known by `git` but not taken into account, left from the working directory to the `index(stage)` after a `git add`.
 
 - Also, we notice at `index` that our modifications finally got registered by `git` but were still not saved/stored by `git` to it's local repository. 
 
 - Then, after a `git commit` we could now see `git` saving our modifications made back from the working directory to it's local repository.
+
+To conclude, Let's interpret `git status` last output. Since our repository is local and therefore not connected to any remote repository, we can't get an output telling us to `push` our saved modifications to that remote repository.
+
+So imagine we create a remote repo at **`https://github.com/BlackRaven237/test.git`** and try to connect it to our local repository. Then, we should follow the steps below:
+
+- Add the remote repository
+``` bash
+git remote add origin https://github.com/BlackRaven237/test.git
+```
+
+- Test connections using
+``` bash
+git remote -v
+```
+
+#### Output
+``` bash
+origin  https://github.com/BlackRaven237/test.git (fetch)
+origin  https://github.com/BlackRaven237/test.git (push)
+```
+
+- Now, let's perform a new modification on `math.h` like deleting the unnecessary function that we added accidentally
+
+``` cpp
+int divide(int a, int b);
+```
+#### Output
+``` bash
+[main 7346075] Deleting divide(a, b) function to math.h
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+```
+
+and checkout `git status`
+``` bash
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+```
+We get exactly what was expected now `git status` informs us our changes are yet stored on our local repository (**`main`**) but not on our remote repository(**`origin/main`**).
+
+So, we can now perform a `push` with the command 
+``` bash
+git push -u origin main
+```
+#### Output
+``` bash
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 302 bytes | 151.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/BlackRaven237/test.git
+   edc3919..7346075  main -> main
+branch 'main' set up to track 'origin/main'.
+```
+
+#### Status
+``` bash
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+```
+
+Now both the local and remote repositories carries our modifications. 
