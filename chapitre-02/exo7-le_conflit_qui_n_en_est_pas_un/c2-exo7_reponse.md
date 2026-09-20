@@ -141,4 +141,4 @@ nothing to commit, working tree clean
 # Conclusion
 We could observe from our merging step that `git` literally merged both branches (local and remote) without any CONFLICT eventhough I and John modified the same file (main.cpp) in those branches but not on the same line. 
 
-We can then conclude that : `git` generates merge CONFLICTS if and only if different collaborators/persons modify the same line of the same file. 
+We can then conclude that : `git` generates merge CONFLICTS if different collaborators/persons modify the same line of the same file. 
