@@ -398,6 +398,8 @@ a60a977 Merge remote-tracking branch 'origin/main'
 :
 ```
 
+Note: In general, `reflog` are automatically cleaned-up by `git` in `30 - 90` days or using `git gc` : that cleanup unnecessary files inorder to optimize the local repository. So `reflog` are not going to be present `indefinitely` on your local repository. So think twice before removing any commit.
+
 # A job to be made later
 We have a new task i.e to create floating-point versions of all functions in `math.h` without staging nor committing.
 
