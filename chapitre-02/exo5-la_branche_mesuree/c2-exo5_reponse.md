@@ -21,11 +21,11 @@ f21b247 Adding math.h to test project
 (END)
 ```
 
-Using the command `du -sh .` 
+Using the command `du -sh .git` 
 ``` bash
 468K    .
 ```
-we see our repository uses exactly **`468K`** on our disk.
+we see our repository (.git) uses exactly **`468K`** on our disk.
 
 Now, let's see how an addition of a new `branch` containing 3 `commits` would affect this disk usage.
 
@@ -88,7 +88,7 @@ int add(int a, int b) { return a + b; }
 int substract(int a, int b) { return a + b; }
 int multiply(int a, int b) { return a * b; }
 int divide(int a, int b) {
-    if (b == 0) return;
+    if (b == 0) return 0;
     return a / b;
 }
 
@@ -171,4 +171,4 @@ Now, we verify our new disk usage : `du -sh .`
 ```
 Hence, we get a noticable difference of **`556K - 468K = 88K`**. 
 
-This result can be explained by the fact that when creating a new branch at a given instance on a repository, `git` doesn't creates a copy of all files at that particular instance and paste it on the new branch, NO. it instead attaches that branch to the commit at that instance and as from that commit(leading to the creation of the branch) all what comes next becomes part of the branch. In other words, a branch is a commit and not a copied version of our working directory as many people may think. So we can think of the `88K` of disk usage as an extra that leaves on the **`feat/adding-operations`** branch
+This result can be explained by the fact that when creating a new branch at a given instance on a repository, `git` doesn't creates a copy of all files at that particular instance and paste it on the new branch, NO. it instead attaches that branch to the commit at that instance and as from that commit(leading to the creation of the branch) all what comes next becomes part of the branch. In other words, a branch is a commit and not a copied version of our working directory as many people may think. So the `88K` of disk usage is the weight of all 3 commits made on the **`feat/adding-operations`** branch.
