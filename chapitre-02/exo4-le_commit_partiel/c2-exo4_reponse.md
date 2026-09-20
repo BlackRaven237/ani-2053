@@ -125,19 +125,12 @@ Changes not staged for commit:
 And hence we commit it using `git commit -m "style: indenting add(int a, int b) in math.cpp"`
 ### Output
 ``` bash
-On branch main
-Your branch is ahead of 'origin/main' by 1 commit.
-  (use "git push" to publish your local commits)
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-        modified:   math.cpp
-
-no changes added to commit (use "git add" and/or "git commit -a")
+to math.cpp"
+[main 955e96c] style: indenting add(int a, int b) in math.cpp
+ 1 file changed, 2 insertion(+), 1 deletion(-)
 ```
 
-Now are first part of the modification is successfully committed. We are then left to commit our second using the same steps. 
+Now the first part of the modification was successfully committed and we are left to commit the second using the same steps. 
 
 
 #### git add -p math.cpp
@@ -153,7 +146,7 @@ index 7e08fee..0d2b47f 100644
 +int substract(int a, int b) { return a + b; }
 (1/1) Stage this hunk [y,n,q,a,d,e,?]? 
 ```
-Notice a difference, `git` now tells us we are left with an `insertion[+]` whereas we had originally in total `3 insertions[+]` and `1 deletion[-]` from the sum of our two parts meaning we could partially commit the first part.
+Notice a difference, `git` tells us we are now left only with an `insertion[+]` whereas we had originally `3 insertions[+]` and `1 deletion[-]` in total : 1st + 2nd parts of modification. This difference confirms we partially committed the 1st part of our modification.
 
 And now we can use **`a`** since we want this entire second portion of the modification in our commit 
 #### Status
