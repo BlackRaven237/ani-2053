@@ -59,11 +59,6 @@ int main () {
 
 Since our remote repository is hosted `github` we will commit changes using the `GUI` (Graphical User Interface) and **NOT** the `CLI`(Command-Line Interface) as usual.
 
-Regardless of that, this is an output we could expect from the commit action.
-``` bash
-[main 645bf4a] Changing add(5, 7) -> add(5, 10)
- 1 file changed, 1 insertion(+), 1 deletion(-)
-```
 # Let's push one to the other
 In order to get more visible outputs we will try to pull the changes from our remote repository to our local repository.
 
@@ -146,7 +141,9 @@ int main () {
 ```
 since we modified the same line of the same file in both branches i.e `main` and `origin/main`. 
 
-We will choose to keep the incoming change **`>>>>>>> origin/main`** and resolve the merge CONFLICT, all we have to do is to delete the tags added by `git` + the code we wabt to remove in order to keep only what we desired
+We will choose to keep the incoming change **`>>>>>>> origin/main`** because for now, we wish the parameter `a` to be `5`.
+
+To resolve the merge CONFLICT, all we need to do is : delete the tags added by `git` + code we wish to remove in order to keep only what we desired.
 
 ### main.cpp
 ``` cpp
