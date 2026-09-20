@@ -355,7 +355,7 @@ a60a977 Merge remote-tracking branch 'origin/main'
 ```
 Verdict: It's no longer present and seems to have completely disappear from the repository.
 
-So now we're left with one option : `reflog` that manages informations recorded reference logs
+So now we're left with one option : `reflog` that manages reference logs informations. Note also `reflogs` are only accessible locally and can't therefore be pushed to any `remote`.
 
 #### Command
 ``` bash
