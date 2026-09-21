@@ -21,17 +21,17 @@ Turn off this advice by setting config variable advice.detachedHead to false
 
 HEAD is now at 7d76c76 Adding multiply(a, b) function to math.h
 ```
-Now, we will manually draw the commit graph as from here using `draw.io`.
+Now, we will manually draw the commit graph we expect using `draw.io`.
 
-<img src="commit-history.png">
+<img src="commit-history-2.png">
 
-On this version, we can see:
+From the diagram we can see:
 - **Two branches:** `main` and `test-branch`
-- **A point of divergence** at commit `5dccd60` leading to the creation of `test-branch`
-- **A point of merge** at commit `d08686c` (merge commit)
+- **A point of divergence** at commit `C` leading to the creation of a `branch`
+- **A point of merge** at commit `E` (merge commit)
 
 # Commit History
-Using `git log --graph`
+Now let's see what's really present using `git log --graph`
 ``` bash
 * commit 7d76c769d057772d272e45aefa6ec87695bd0012 (HEAD)
 | Author: Youmbi Bovan <youmbincbovan@gmail.com>
@@ -80,10 +80,14 @@ Using `git log --graph`
 ~
 ```
 
-# Correspondance between both
-| **Commit on image** | **Correspondance on our output with commit message** |
+# Correspondance of history with our diagram
+| **Commit from Diagram** | **Correspondance with commit history** |
 |---------------------|------------------------------------------------------|
-| `d08686c` | Merge branch 'test-branch' |
-| `f21b247` | Adding math.h to test project |
-| `5dccd60` | Adding main.cpp to test project |
- 
+| **A** | `f21b247` Adding math.h to test project |
+| **B** | `9686ad2` Adding math.cpp to test project |
+| **C** | `5dccd60` Adding main.cpp to test project |
+| **A'** | `053d650` (test-branch) Changing add(a, b) arguments to add(5, 7) |
+| **D** | `f41d4e5` Adding substract(a, b) function to math.h |
+| **E** |  `d08686c` Merge branch 'test-branch' |
+| **F** | `7d76c76` (HEAD) Adding multiply(a, b) function to math.h |
+
