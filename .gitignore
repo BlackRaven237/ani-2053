@@ -1,0 +1,7 @@
+Build/*
+
+*.exe
+
+*.o
+
+create.sh
