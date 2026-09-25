@@ -18,6 +18,15 @@ int nkmain(const NkEntryState &state) {
 
     while (window.IsOpen()) { 
         /* events come here */ 
+        while (NkEvent* ev = NkEvents().PollEvent()) {
+            // ev points to current event
+            if (ev->Is<NkWindowCloseEvent>()) {
+                window.Close();
+            }
+            else if (auto* kp = ev->As<NkKeyPressEvent>()) {
+                if (kp->GetKey() == NkKey::NK_ESCAPE) window.Close();
+            }
+        }
     }
     return 0;
 }

@@ -21,8 +21,8 @@ int nkmain(const NkEntryState &state) { ... }
     NkWindowConfig cfg;
 
     cfg.title  = "My window";
-    cfg.width  = 1280;
-    cfg.height = 720;
+    cfg.width  = 800;
+    cfg.height = 640;
 ``` 
 
 - A window object of type `NKWindow` created with **configs** been passed to it's constructor. We also verify it's created without error
@@ -34,9 +34,21 @@ int nkmain(const NkEntryState &state) { ... }
     }
 ``` 
 
-- We then keep the window alive waiting for events.
+- We then keep the window alive and Handle events.
 ``` cpp
     while (window.IsOpen()) { 
         /* events come here */ 
+        while (NkEvent* ev = NkEvents().PollEvent()) {
+            // ev points to current event
+            if (ev->Is<NkWindowCloseEvent>()) {
+                window.Close();
+            }
+            else if (auto* kp = ev->As<NkKeyPressEvent>()) {
+                if (kp->GetKey() == NkKey::NK_ESCAPE) window.Close();
+            }
+        }
     }
 ```
+
+#### Output
+<img src="output.png">
