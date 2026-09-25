@@ -7,8 +7,8 @@ int nkmain(const NkEntryState &state) {
     NkWindowConfig cfg;
 
     cfg.title  = "My window";
-    cfg.width  = 1280;
-    cfg.height = 720;
+    cfg.width  = 800;
+    cfg.height = 640;
 
     NkWindow window(cfg);
     if (!window.IsOpen()) {
