@@ -1,0 +1,39 @@
+#include "NKWindow/NKWindow.h"
+#include "NKWindow/NKMain.h"
+
+using namespace nkentseu;
+
+int nkmain(const NkEntryState &state) {
+    NkWindowConfig cfg;
+
+    cfg.title  = "c3-exo5_main.cpp";
+    cfg.width  = 800;
+    cfg.height = 640;
+
+    cfg.resizable     = true;
+    cfg.movable       = true;
+    cfg.closable      = true;
+
+    NkWindow window(cfg);
+    if (!window.IsOpen()) {
+        logger.Error("[app] window creation failed");
+        return -1;
+    }
+
+    while (window.IsOpen()) { 
+        
+        NkString newTitle = cfg.title + " " + NkToString(window.GetSize());
+
+        /* events come here */
+        while (NkEvent* ev = NkEvents().PollEvent()) {
+            // ev points to current event
+            if (ev->Is<NkWindowCloseEvent>()) {
+                window.Close();
+            }
+            else if (auto* kp = ev->As<NkKeyPressEvent>()) {
+                window.SetTitle(newTitle + "*");
+            }
+        }
+    }
+    return 0;
+}
