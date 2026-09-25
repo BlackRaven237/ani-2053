@@ -11,8 +11,8 @@ int nkmain(const NkEntryState &state) {
     cfg.height = 640;
 
     // Bounds
-    cfg.minHeight = 1;
-    cfg.minWidth = 1;
+    // cfg.minHeight = 200;
+    // cfg.minWidth = 200;
 
     cfg.resizable     = true;
     cfg.movable       = true;
@@ -27,7 +27,10 @@ int nkmain(const NkEntryState &state) {
     float32 minWidth = cfg.minWidth;
 
     while (window.IsOpen()) { 
-        /* events come here */ 
+        /* events come here */
+        
+        float32 width = window.GetSize().width;
+
         while (NkEvent* ev = NkEvents().PollEvent()) {
             // ev points to current event
             if (ev->Is<NkWindowCloseEvent>()) {
@@ -35,14 +38,12 @@ int nkmain(const NkEntryState &state) {
             }
             else if (auto* kp = ev->As<NkKeyPressEvent>()) {
                 if (kp->GetKey() == NkKey::NK_ESCAPE) window.Close();
+            } 
+            else if (width <= minWidth) {
+                logger.Error("[WINDOW] current width is smaller than min-width : {0}", width);
             }
         }
 
-        float32 width = window.GetSize().x;
-        if(width <= minWidth) {
-            logger.Error("Smaller than minimal width 🤔");
-            logger.Debug("width = {0}", width);
-        }
     }
     return 0;
 }
