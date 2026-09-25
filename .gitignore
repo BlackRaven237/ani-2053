@@ -13,3 +13,5 @@ Build/*
 .jenga-typings
 
 NkWindowKit/*
+
+logs/*
