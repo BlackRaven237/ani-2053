@@ -23,9 +23,6 @@ int nkmain(const NkEntryState &state) {
             if (ev->Is<NkWindowCloseEvent>()) {
                 window.Close();
             }
-            else if (auto* kp = ev->As<NkKeyPressEvent>()) {
-                if (kp->GetKey() == NkKey::NK_ESCAPE) window.Close();
-            }
         }
     }
     return 0;

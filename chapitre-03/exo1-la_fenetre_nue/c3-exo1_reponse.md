@@ -1,12 +1,12 @@
 Our program `c3-exo1_main.cpp` has exactly `32 lines` of which :
 
-- We have includes from `line 1 to 2`
+- We have includes from `line 1 to 2`. These are mentionned in chapter 3 at the smallest valid `NKWindow` program.
 ``` cpp
     #include "NKWindow/NKWindow.h"
     #include "NKWindow/NKMain.h"
 ```
 
-- A namespace `nkentseu` at `line 4`
+- A namespace `nkentseu` at `line 4`. This `namespace` was not explicitly mentionned in the chapter but we know `Nkentseu` works using it.
 ``` cpp
 using namespace nkentseu;
 ```
@@ -35,7 +35,7 @@ int nkmain(const NkEntryState &state) { ... }
     }
 ``` 
 
-- We then keep the window alive and Handle events.
+- We then keep the window alive and Handle events. These are mentionned in chapter 3 at the smallest valid `NKWindow` program.
 ``` cpp
     while (window.IsOpen()) { 
         /* events come here */ 
@@ -43,9 +43,6 @@ int nkmain(const NkEntryState &state) { ... }
             // ev points to current event
             if (ev->Is<NkWindowCloseEvent>()) {
                 window.Close();
-            }
-            else if (auto* kp = ev->As<NkKeyPressEvent>()) {
-                if (kp->GetKey() == NkKey::NK_ESCAPE) window.Close();
             }
         }
     }
@@ -94,17 +91,16 @@ Build Order (1 projects):
 ✓ Built: Build/Bin/Debug-Linux/la_fenetre_nue/la_fenetre_nue
 
 ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
-│  ✓ Build Successful                                                             Time: 3.85s  │
+│  ✓ Build Successful                                                             Time: 2.19s  │
 └──────────────────────────────────────────────────────────────────────────────────────────────┘
 
 ════════════════════════════════════════════════════════════════════════════════
                                 BUILD COMPLETED                                 
 ════════════════════════════════════════════════════════════════════════════════
 Projects Built:  1/1
-Time:           3.85s
+Time:           2.19s
 Status:         ✓ SUCCESS
 ════════════════════════════════════════════════════════════════════════════════
-
 ```
 
 ### Output
