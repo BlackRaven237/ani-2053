@@ -5,3 +5,7 @@ Build/*
 *.o
 
 create.sh
+
+*.jenga
+
+NkentseuKit/*
