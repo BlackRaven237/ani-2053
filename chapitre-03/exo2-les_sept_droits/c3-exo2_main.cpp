@@ -16,7 +16,7 @@ int nkmain(const NkEntryState &state) {
     cfg.minimizable   = true;
     cfg.maximizable   = true;
     cfg.canFullscreen = true;
-    cfg.modal         = false;
+    cfg.modal         = true;
 
     NkWindow window(cfg);
     if (!window.IsOpen()) {

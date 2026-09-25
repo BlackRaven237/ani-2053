@@ -48,7 +48,7 @@ int nkmain(const NkEntryState &state) {
 and we build and run this program using `jenga`
 
 ``` bash
-jenga build --target la_fenetre_nue --config Debug
+jenga build --target les_sept_droits --config Debug
 
 ./Build/Bin/Debug-Linux/les_sept_droits/les_sept_droits
 ```
