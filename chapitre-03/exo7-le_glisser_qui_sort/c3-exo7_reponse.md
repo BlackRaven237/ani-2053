@@ -13,7 +13,7 @@ We are asked to move the mouse from window to the exterior :
 - Capturing the mouse once and another time without capturing
 - Then describe the difference on user's point of view 
 
-To capture mouse movement out of window we set `CaptureMouse()` to `true`
+To capture mouse movement (`right-click` and `drag`) out of window we set `CaptureMouse()` to `true`
 
 ``` cpp
 window.CaptureMouse(true);
@@ -45,28 +45,26 @@ Notice we use the `logger` system to output the mouse movement.
 
 ### Without `CaptureMouse()`
 
-Once the mouse was out of the window no mouse movement was recorded meaning the mouse was not captured
+Once we `right-clicked and draged` out of the window mouse movement was still recorded and logged at the terminal. This behaviour was not expected so we can imagine it's a bug.
 
 ``` bash
-# ....
-
-[2026-09-26 09:30:46.550] [INF] [default] [c3-exo7_main.cpp:38 in nkmain] -> x -> 777 and y -> 4
-[2026-09-26 09:30:46.558] [INF] [default] [c3-exo7_main.cpp:38 in nkmain] -> x -> 778 and y -> 4
-[2026-09-26 09:30:46.580] [INF] [default] [c3-exo7_main.cpp:38 in nkmain] -> x -> 779 and y -> 2
-[2026-09-26 09:30:46.610] [INF] [default] [c3-exo7_main.cpp:38 in nkmain] -> x -> 779 and y -> 1
-[2026-09-26 09:30:46.700] [INF] [default] [c3-exo7_main.cpp:38 in nkmain] -> x -> 779 and y -> 0
+[2026-09-26 15:10:34.645] [INF] [default] [c3-exo7_main.cpp:38 in nkmain] -> x -> 1070 and y -> 301
+[2026-09-26 15:10:34.652] [INF] [default] [c3-exo7_main.cpp:38 in nkmain] -> x -> 1070 and y -> 303
+[2026-09-26 15:10:34.660] [INF] [default] [c3-exo7_main.cpp:38 in nkmain] -> x -> 1070 and y -> 305
+[2026-09-26 15:10:34.667] [INF] [default] [c3-exo7_main.cpp:38 in nkmain] -> x -> 1070 and y -> 306
+[2026-09-26 15:10:34.675] [INF] [default] [c3-exo7_main.cpp:38 in nkmain] -> x -> 1070 and y -> 309
 ```
 
 ### With `CaptureMouse()`
 
-On our Linux system, we obtained the same behaviour as when `CaptureMouse()` was set to false. This could possibly be a bug.
+On our Linux system, when `CaptureMouse()` was set to true we could `right-click` and `drag` with our mouse from the window to it's exterior and the movement was recorded.
 
 ![](output1.png "")
 
-Notice where the cursor was placed and see the mouse movement was not consoled/recorded.
+Notice where the cursor was placed and see the mouse movement was consoled/recorded.
 
 ---
 
 ### The User's Point of View
 
-When `CaptureMouse()` is set to `true`, Users will notice both mouse movements made in and out of the window will be recorded by the window and When `false` only those made within the window will be recorded.
+With `CaptureMouse()` set to `true`, Users will notice both mouse movements made in and out of the window will be recorded by the window and When `false` only those made within the window will be recorded.
