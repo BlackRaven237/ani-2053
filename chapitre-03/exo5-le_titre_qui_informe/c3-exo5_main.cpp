@@ -20,18 +20,29 @@ int nkmain(const NkEntryState &state) {
         return -1;
     }
 
-    while (window.IsOpen()) { 
-        
-        NkString newTitle = cfg.title + " " + NkToString(window.GetSize());
+    NkString size = "";
+    bool saved = true;
 
-        /* events come here */
+    while (window.IsOpen()) {
+
         while (NkEvent* ev = NkEvents().PollEvent()) {
-            // ev points to current event
             if (ev->Is<NkWindowCloseEvent>()) {
                 window.Close();
             }
+
+            else if (ev->Is<NkWindowResizeEvent>()) {
+                size = NkToString(window.GetSize());
+            }
+
             else if (auto* kp = ev->As<NkKeyPressEvent>()) {
-                window.SetTitle(newTitle + "*");
+                if (kp->GetKey() == NkKey::NK_S) saved = true; // Press the key 'S' to save
+                else saved = false;
+            } 
+
+            else {
+                if (saved) window.SetTitle(cfg.title + " " + size);
+
+                else window.SetTitle(cfg.title + " " + size + "*");
             }
         }
     }
