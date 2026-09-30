@@ -1,29 +1,23 @@
 #include "NKWindow/NKWindow.h"
 #include "NKWindow/NKMain.h"
+#include "NKCanvas/App/NkCanvasApp.h"
 
 using namespace nkentseu;
+using namespace nkentseu::renderer;
+class CanvasApp : public NkCanvasApp {
+public:    
+    CanvasApp() {
+        this->canvasCfg.title = "My NkCanvas App";
+        this->canvasCfg.width = 640;
+        this->canvasCfg.height = 640;
+        this->canvasCfg.clearColor = NkColor2D::ForestGreen;
 
-int nkmain(const NkEntryState &state) {
-    NkWindowConfig cfg;
-
-    cfg.title  = "My window";
-    cfg.width  = 800;
-    cfg.height = 640;
-
-    NkWindow window(cfg);
-    if (!window.IsOpen()) {
-        logger.Error("[app] window creation failed");
-        return -1;
+        Config() = canvasCfg;
     }
+private:
+    NkCanvasAppConfig canvasCfg;
+};
 
-    while (window.IsOpen()) { 
-        /* events come here */ 
-        while (NkEvent* ev = NkEvents().PollEvent()) {
-            // ev points to current event
-            if (ev->Is<NkWindowCloseEvent>()) {
-                window.Close();
-            }
-        }
-    }
-    return 0;
+int nkmain(const NkEntryState &state){
+    return NkCanvasApp::Run<CanvasApp>(state);
 }
