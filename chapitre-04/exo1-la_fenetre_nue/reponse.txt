@@ -1,5 +1,1 @@
-What the shell does for me : The shell NkCanvasApp automatically build everything for us : window, renderer, time, game loop. given a configuration at the constructor.
-
-What happens if i configure OnInit : I will be constrainted to manually set up everything : window, renderer, etc. 
-
-What happens without NKMain.h : Without NKMain.h, everything compiles but linking fails because there is an undefined reference to `main` symbol.
+What the shell does for me : The shell NkCanvasApp automatically build everything for us : window, renderer, time, game loop. given a configuration at the constructor, What happens if i configure OnInit : I will be constrainted to manually set up everything : window and renderer, What happens without NKMain.h : Without NKMain.h, everything compiles but linking fails because there is an undefined reference to `main` symbol
