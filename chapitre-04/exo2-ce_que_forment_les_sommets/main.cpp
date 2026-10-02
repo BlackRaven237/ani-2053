@@ -43,16 +43,32 @@ struct Vertex {
     void SetPrimitiveType() {
         PrimitiveType type;
 
-        if(strType == "POINTS") type = PrimitiveType::POINTS;
-        else if (strType == "LINES") type = PrimitiveType::LINES;
-        else if (strType == "LINE_STRIP") type = PrimitiveType::LINE_STRIP;
-        else if (strType == "TRIANGLES") type = PrimitiveType::TRIANGLES;
-        else if (strType == "TRIANGLE_FAN") type = PrimitiveType::TRIANGLE_FAN;
-        else if (strType == "TRIANGLE_STRIP") type = PrimitiveType::TRIANGLE_STRIP;
-        else type = PrimitiveType::NONE;
+        if(strType == "POINTS") {
+            type = PrimitiveType::POINTS;
+        }
+        else if (strType == "LINES") {
+            type = PrimitiveType::LINES;
+        }
+        else if (strType == "LINE_STRIP") {
+            type = PrimitiveType::LINE_STRIP;
+        }
+        else if (strType == "TRIANGLES") {
+            type = PrimitiveType::TRIANGLES;
+        }
+        else if (strType == "TRIANGLE_FAN") {
+            type = PrimitiveType::TRIANGLE_FAN;
+        } 
+        else if (strType == "TRIANGLE_STRIP") {
+            type = PrimitiveType::TRIANGLE_STRIP;
+        }
+        else {
+            type = PrimitiveType::NONE;
+        }
 
         pType = type;
-        this->SetUnit(); // Setting current vertex unit
+
+        // Setting current vertex unit
+        this->SetUnit();
     }
 
 private:
@@ -139,7 +155,7 @@ int main() {
         if(vertexArray[i]._unit == unit::REFUSE) refuses++;
     }
 
-    std::cout << "" << std::endl;
+    // std::cout << "" << std::endl;
 
     for (int i=0; i<number; i++) {
         if (vertexArray[i].pType == PrimitiveType::NONE) {
