@@ -138,8 +138,6 @@ int main () {
         rectangles.push_back(rectangle);
     }
 
-    std::cout << std::endl;
-
     int refuses = 0;
     for (auto rectangle : rectangles) {
         if (rectangle.angle % 90 != 0) {
