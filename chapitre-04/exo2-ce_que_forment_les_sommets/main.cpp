@@ -143,19 +143,15 @@ int main() {
     }
 
     // Calculate counts and lefts
-    for (int i=0; i<number; i++) {
-        Output(vertexArray[i]);
-    }
-
     int points = 0, segments = 0, triangles = 0, refuses = 0;
     for (int i=0; i<number; i++) {
+        Output(vertexArray[i]);
+
         if(vertexArray[i]._unit == unit::POINTS) points += vertexArray[i].count;
         if(vertexArray[i]._unit == unit::SEGMENTS) segments += vertexArray[i].count;
         if(vertexArray[i]._unit == unit::TRIANGLES) triangles += vertexArray[i].count;
         if(vertexArray[i]._unit == unit::REFUSE) refuses++;
     }
-
-    // std::cout << "" << std::endl;
 
     for (int i=0; i<number; i++) {
         if (vertexArray[i].pType == PrimitiveType::NONE) {
@@ -173,10 +169,10 @@ int main() {
         
     }
 
-    std::cout << "POINTS: " << points << std::endl;
-    std::cout << "SEGMENTS: " << segments << std::endl;
-    std::cout << "TRIANGLES: " << triangles << std::endl;
-    std::cout << "REFUSES: " << refuses << std::endl;
+    std::cout << "POINTS " << points << std::endl;
+    std::cout << "SEGMENTS " << segments << std::endl;
+    std::cout << "TRIANGLES " << triangles << std::endl;
+    std::cout << "REFUSES " << refuses << std::endl;
 
     return 0;
 }
