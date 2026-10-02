@@ -40,7 +40,6 @@ struct Rectangle {
         int min_x, min_y;
         int max_x, max_y;
         
-        // minx, miny, maxx, maxy
         min_x = coins_global[0];
         min_y = coins_global[1];
         max_x = coins_global[0];
@@ -66,35 +65,33 @@ private:
 
         if (angle > 360) {
             alpha = angle - 360;
-        } 
-        else if (angle < 0) {
+        } else if (angle < 0) {
             alpha = 360 + angle;
-        }
-        else {
+        } else {
             alpha = angle;
         }
 
         switch (alpha) {
-            case 0: 
-                c = 1, s = 0;
-                break; 
-            case 90:
-                c = 0, s = 1;
-                break;
-            case 180:
-                c = -1, s = 0;
-                break;
-            case 270:
-                c = 0, s = -1;
-                break;
+        case 0: 
+            c = 1, s = 0;
+            break; 
+        case 90:
+            c = 0, s = 1;
+            break;
+        case 180:
+            c = -1, s = 0;
+            break;
+        case 270:
+            c = 0, s = -1;
+            break;
         }
     }
 };
 
 void ScaleAndRotate(Rectangle& rect) {
     for (int i=0; i<8; i+=2) {
-        int ax = (rect.coins_locaux[i] - rect.ox) * rect.sx;  // x-coordinates
-        int ay = (rect.coins_locaux[i+1] - rect.oy) * rect.sy; // y-coordinates
+        int ax = (rect.coins_locaux[i] - rect.ox) * rect.sx;     // x-coordinates
+        int ay = (rect.coins_locaux[i+1] - rect.oy) * rect.sy;   // y-coordinates
 
         int rx = ax * rect.c - ay * rect.s;
         int ry = ax * rect.s + ay * rect.c;
@@ -143,8 +140,7 @@ int main () {
         if (rectangle.angle % 90 != 0) {
             std::cout << rectangle.name << " " << "ANGLE REFUSE" << std::endl;
             refuses++;
-        } 
-        else { 
+        } else { 
             std::cout << rectangle.name << " COINS ";
             print_coins_global(rectangle);
 
