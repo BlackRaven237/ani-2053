@@ -35,7 +35,8 @@ struct Vertex {
 
     // Output
     PrimitiveType pType;
-    unit _unit;
+    unit 
+        _unit;
     int count = 0;
     int left = 0;
 
@@ -74,13 +75,27 @@ struct Vertex {
 private:
     void SetUnit() {
         switch (pType) {
-            case PrimitiveType::LINES : _unit = unit::SEGMENTS; break;
-            case PrimitiveType::LINE_STRIP : _unit = unit::SEGMENTS; break;
-            case PrimitiveType::POINTS : _unit = unit::POINTS; break;
-            case PrimitiveType::TRIANGLES : _unit = unit::TRIANGLES; break;
-            case PrimitiveType::TRIANGLE_FAN : _unit = unit::TRIANGLES; break;
-            case PrimitiveType::TRIANGLE_STRIP : _unit = unit::TRIANGLES; break;
-            case PrimitiveType::NONE : _unit = unit::REFUSE; break;
+            case PrimitiveType::LINES : 
+                _unit = unit::SEGMENTS; 
+                break;
+            case PrimitiveType::LINE_STRIP : 
+                _unit = unit::SEGMENTS; 
+                break;
+            case PrimitiveType::POINTS : 
+                _unit = unit::POINTS; 
+                break;
+            case PrimitiveType::TRIANGLES : 
+                _unit = unit::TRIANGLES; 
+                break;
+            case PrimitiveType::TRIANGLE_FAN : 
+                _unit = unit::TRIANGLES; 
+                break;
+            case PrimitiveType::TRIANGLE_STRIP : 
+                _unit = unit::TRIANGLES; 
+                break;
+            case PrimitiveType::NONE : 
+                _unit = unit::REFUSE; 
+                break;
         }
     }
 };
@@ -137,7 +152,7 @@ int main() {
 
         std::cin >> vertex.strType >> vertex.vertices;
 
-        vertex.SetPrimitiveType(); // Convert type from str -> primitive
+        vertex.SetPrimitiveType();   // Convert type from str -> primitive
 
         vertexArray.push_back(vertex);
     }
@@ -147,23 +162,29 @@ int main() {
     for (int i=0; i<number; i++) {
         Output(vertexArray[i]);
 
-        if(vertexArray[i]._unit == unit::POINTS) points += vertexArray[i].count;
-        if(vertexArray[i]._unit == unit::SEGMENTS) segments += vertexArray[i].count;
-        if(vertexArray[i]._unit == unit::TRIANGLES) triangles += vertexArray[i].count;
-        if(vertexArray[i]._unit == unit::REFUSE) refuses++;
+        if(vertexArray[i].
+                _unit == unit::POINTS) points += vertexArray[i].count;
+        if(vertexArray[i].
+                _unit == unit::SEGMENTS) segments += vertexArray[i].count;
+        if(vertexArray[i].
+                _unit == unit::TRIANGLES) triangles += vertexArray[i].count;
+        if(vertexArray[i].
+                _unit == unit::REFUSE) refuses++;
     }
 
     for (int i=0; i<number; i++) {
         if (vertexArray[i].pType == PrimitiveType::NONE) {
             std::cout << vertexArray[i].strType
                       << " " << vertexArray[i].vertices
-                      << " " << ToString(vertexArray[i]._unit) << std::endl;
+                      << " " << ToString(vertexArray[i].
+                            _unit) << std::endl;
         } 
         else {
             std::cout << vertexArray[i].strType
                     << " " << vertexArray[i].vertices
                     << " " << vertexArray[i].count
-                    << " " << ToString(vertexArray[i]._unit) 
+                    << " " << ToString(vertexArray[i].
+                            _unit) 
                     << " " << vertexArray[i].left << std::endl;
         }
         
