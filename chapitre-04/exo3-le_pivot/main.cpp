@@ -39,7 +39,6 @@ struct Rectangle {
     void FindBoxCoord() {
         int min_x, min_y;
         int max_x, max_y;
-        
         min_x = coins_global[0];
         min_y = coins_global[1];
         max_x = coins_global[0];
@@ -140,7 +139,8 @@ int main () {
         if (rectangle.angle % 90 != 0) {
             std::cout << rectangle.name << " " << "ANGLE REFUSE" << std::endl;
             refuses++;
-        } else { 
+        }
+        else { 
             std::cout << rectangle.name << " COINS ";
             print_coins_global(rectangle);
 
