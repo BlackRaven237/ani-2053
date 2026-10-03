@@ -1,0 +1,3 @@
+What the shell gives me : It automatically guarantees window creation, renderer targetting, deltatime calculation 
+What it takes from me : It hides implementation making bugs hard to catch, 
+When I would choose the hand-written loop : When i choose this method i handle everything myself
