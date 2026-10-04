@@ -210,7 +210,7 @@ int main() {
         std::cout << ToString(policy.type) << " " << policy.vx << " "
                   << policy.vy << " " << policy.vw << " "
                   << policy.vh << " " << policy.mw << " "
-                  << policy.mh << std::endl;
+                  << policy.mh << " " << std::endl;
     }
 
     std::cout << "BANDES " << bandes << std::endl;
