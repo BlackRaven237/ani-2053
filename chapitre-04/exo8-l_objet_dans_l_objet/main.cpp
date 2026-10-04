@@ -138,6 +138,6 @@ int main () {
         level = std::max(level, objects[i].level);
     }
 
-    std::cout << "PROFONDEUR " << level << std::endl;
+    std::cout << "PROFONDEUR " << level + 1 << std::endl;
     return 0;
 }
