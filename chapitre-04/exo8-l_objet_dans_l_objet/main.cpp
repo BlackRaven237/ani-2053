@@ -26,6 +26,10 @@ public:
     }
 
     void PlaceInWorld(const Object& parent) {
+        if (parent.name == name) {
+            return;
+        }
+
         int ax = tx * parent.scale;
         int ay = ty * parent.scale;
 
@@ -39,7 +43,7 @@ public:
 
         angle = angle + parent.angle;
         
-        if (angle < 0) {
+        if (angle <= 0) {
             angle = 0;
         }
         if (angle >= 270) {
@@ -119,10 +123,9 @@ int main () {
         std::string parent_name = obj.GetParentName();
 
         if (parent_name == "-") {
-            continue;
+            obj.PlaceInWorld(obj);
         } else {
             Object parent = SearchParent(parent_name, objects);
-
             obj.PlaceInWorld(parent);
         }
     }
