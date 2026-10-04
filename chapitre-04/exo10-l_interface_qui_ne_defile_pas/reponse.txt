@@ -1,0 +1,3 @@
+What the bar does without ResetView : without a ResetView the bar moves, 
+Why : As the View moves everything rendered also moves, 
+Where to put the call : It should call before the bar is been drawn
