@@ -7,13 +7,14 @@ class Object {
 public:
     Object() {}
 
-    Object(std::string name, std::string parent_name, int tx, int ty, int angle, int scale) {
+    Object(std::string name, std::string parent_name, int tx, int ty, int angle, int scale, int level = 1) {
         this->name = name;
         this->parent_name = parent_name;
         this->tx = tx;
         this->ty = ty;
         this->angle = angle;
         this->scale = scale;
+        this->level = level;
     }
 
     std::string GetName() {
