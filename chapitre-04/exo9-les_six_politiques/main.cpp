@@ -97,10 +97,10 @@ Policy FIT_LETTERBOX(const Window& window) {
         return FOLLOW_WINDOW(window, PolicyType::FIT_LETTERBOX);
     }
 
-    int vx, vy, vw, vh;
-    int mw, mh;
+    int vx = 0, vy = 0, vw = 0, vh = 0;
+    int mw = 0, mh = 0;
 
-    if (window.W * window.RH <= window.H * window.RW) {
+    if ((window.W * window.RH) <= (window.H * window.RW)) {
         vw = window.W;
         vh = Round(window.RH * window.W, window.RW);
     } else {
@@ -121,8 +121,8 @@ Policy INTEGER_SCALE(const Window& window) {
         return FOLLOW_WINDOW(window, PolicyType::INTEGER_SCALE);
     }
 
-    int vx, vy, vw, vh;
-    int mw, mh;
+    int vx = 0, vy = 0, vw = 0, vh = 0;
+    int mw = 0, mh = 0;
 
     if (window.W >= window.RW && window.H >= window.RH) {
         int k = std::min(window.W / window.RW, window.H / window.RH);
@@ -154,7 +154,7 @@ Policy FIT_CROP(const Window& window) {
 
     int vx = 0, vy = 0;
     int vw = window.W, vh = window.H;
-    int mw, mh;
+    int mw = 0, mh = 0;
 
     if (window.W * window.RH > window.H * window.RW) {
         mw = window.RW; 
