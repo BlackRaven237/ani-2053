@@ -16,7 +16,7 @@ const char* ToString(PolicyType type) {
     switch (type)
     {
     case PolicyType::FOLLOW_WINDOW:
-        return "FOLLOw_WINDOW";
+        return "FOLLOW_WINDOW";
 
     case PolicyType::STRETCH:
         return "STRETCH";
@@ -192,25 +192,23 @@ int main() {
     auto policies = CalculatePolicyValues(window);
 
     int bandes = 0;
-    auto deformation = "";
-
-
-    /// Output
-    for (auto policy : policies) {
+    for (auto& policy : policies) {
         if (policy.vy < window.W && policy.vh < window.H) {
             bandes++;
         }
+    }
 
-        if ((window.RW != 0 || window.RW != 0) && (window.W * window.RH != window.H * window.RW)) {
-            deformation = "OUI";
-        } else {
-            deformation = "NON";
-        }
+    const char* deformation = "NON";
+    if ((window.RW != 0 || window.RW != 0) && (window.W * window.RH != window.H * window.RW)) {
+        deformation = "OUI";
+    }
 
+    /// Output
+    for (auto& policy : policies) {
         std::cout << ToString(policy.type) << " " << policy.vx << " "
                   << policy.vy << " " << policy.vw << " "
                   << policy.vh << " " << policy.mw << " "
-                  << policy.mh << " " << std::endl;
+                  << policy.mh << "\n";
     }
 
     std::cout << "BANDES " << bandes << std::endl;
