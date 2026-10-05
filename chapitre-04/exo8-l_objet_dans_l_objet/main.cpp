@@ -11,9 +11,19 @@ public:
         this->parent_name = parent_name;
         this->tx = tx;
         this->ty = ty;
-        this->angle = angle;
         this->scale = scale;
         this->level = level;
+
+        if (angle >= 360) {
+            this->angle = angle - 360;
+        }
+        else if (angle < 0) {
+            this->angle = 360 + angle;
+        }
+        else {
+            this->angle = angle;
+        }
+
     }
 
     std::string GetName() {
@@ -29,7 +39,12 @@ public:
         int ay = ty * parentScale;
 
         int c = 0, s = 0;
-        DetermineUnitRotationVec(parentAngle, c, s);
+        switch (parentAngle) {
+            case 0:     c = 1, s = 0;   break; 
+            case 90:    c = 0, s = 1;   break;
+            case 180:   c = -1, s = 0;  break;
+            case 270:   c = 0, s = -1;  break;
+        }
 
         int rx = ax * c - ay * s;
         int ry = ax * s + ay * c;
@@ -54,34 +69,6 @@ private:
     std::string name;
     std::string parent_name;
 
-    void DetermineUnitRotationVec(int _angle, int& c, int& s) {
-        int alpha = _angle;
-
-        if (_angle > 360) {
-            alpha = _angle - 360;
-        }
-        if (_angle < 0) {
-            alpha = 360 + _angle;
-        }
-
-        switch (alpha) {
-        case 0: 
-            c = 1, s = 0;
-            break; 
-        case 90:
-            c = 0, s = 1;
-            break;
-        case 180:
-            c = -1, s = 0;
-            break;
-        case 270:
-            c = 0, s = -1;
-            break;
-        default: 
-            c = 1, s = 1;
-            break;
-        }
-    }
 public:
     int tx, ty;
     int angle;
