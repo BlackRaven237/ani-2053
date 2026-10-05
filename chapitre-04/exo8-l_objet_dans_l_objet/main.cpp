@@ -54,11 +54,11 @@ public:
 
         angle = angle + parentAngle;
         
-        if (angle <= 0) {
-            angle = 0;
+        if (angle >= 360) {
+            angle = angle - 360;
         }
-        if (angle >= 270) {
-            angle = 270;
+        else if (angle < 0) {
+            angle = 360 + angle;
         }
 
         scale = scale * parentScale;
