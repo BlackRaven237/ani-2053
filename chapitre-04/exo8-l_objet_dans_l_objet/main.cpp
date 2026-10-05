@@ -2,7 +2,6 @@
 #include <algorithm>
 #include <vector>
 #include <string>
-
 class Object {
 public:
     Object() {}
@@ -25,23 +24,20 @@ public:
         return parent_name;
     }
 
-    void PlaceInWorld(Object& parent) {
-        if (parent.GetName() == name) {
-            return;
-        }
+    void PlaceInWorld(int xParent = 0, int yParent = 0, int parentScale = 1, int parentAngle = 0, int parentLevel = 0) {
+        int ax = tx * parentScale;
+        int ay = ty * parentScale;
 
-        int ax = tx * parent.scale;
-        int ay = ty * parent.scale;
-
-        DetermineUnitRotationVec(parent.angle);
+        int c = 0, s = 0;
+        DetermineUnitRotationVec(parentAngle, c, s);
 
         int rx = ax * c - ay * s;
         int ry = ax * s + ay * c;
 
-        tx = parent.tx + rx;
-        ty = parent.ty + ry;
+        tx = xParent + rx;
+        ty = yParent + ry;
 
-        angle = angle + parent.angle;
+        angle = angle + parentAngle;
         
         if (angle <= 0) {
             angle = 0;
@@ -50,24 +46,22 @@ public:
             angle = 270;
         }
 
-        scale = scale * parent.scale;
-        level = parent.level + 1;
+        scale = scale * parentScale;
+        level = parentLevel + 1;
     }
 
 private:
     std::string name;
     std::string parent_name;
 
-    int c = 0, s = 0;
-    void DetermineUnitRotationVec(int _angle) {
-        int alpha;
+    void DetermineUnitRotationVec(int _angle, int& c, int& s) {
+        int alpha = _angle;
 
         if (_angle > 360) {
             alpha = _angle - 360;
-        } else if (angle < 0) {
+        }
+        if (_angle < 0) {
             alpha = 360 + _angle;
-        } else {
-            alpha = _angle;
         }
 
         switch (alpha) {
@@ -82,6 +76,9 @@ private:
             break;
         case 270:
             c = 0, s = -1;
+            break;
+        default: 
+            c = 1, s = 1;
             break;
         }
     }
@@ -123,11 +120,12 @@ int main () {
         std::string parent_name = obj.GetParentName();
 
         if (parent_name == "-") {
-            obj.PlaceInWorld(obj);
-        } else {
-            Object parent = SearchParent(parent_name, objects);
-            obj.PlaceInWorld(parent);
+            obj.PlaceInWorld();
+            continue;
         }
+
+        Object parent = SearchParent(parent_name, objects);
+        obj.PlaceInWorld(parent.tx, parent.ty, parent.scale, parent.angle, parent.level);
     }
 
     /// Output
