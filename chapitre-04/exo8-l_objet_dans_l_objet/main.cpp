@@ -25,8 +25,8 @@ public:
         return parent_name;
     }
 
-    void PlaceInWorld(const Object& parent) {
-        if (parent.name == name) {
+    void PlaceInWorld(Object& parent) {
+        if (parent.GetName() == name) {
             return;
         }
 
