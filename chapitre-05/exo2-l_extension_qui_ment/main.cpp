@@ -211,9 +211,9 @@ Format GetFormatFromBytes(const std::string& bytes, size_t size) {
         }
     }
 
-    else if ((b[0] == "3C" && b[1] == "3F" && b[2] == "78" && b[3] == "6D" && b[4] == "6C") || (b[0] == "3C" && b[1] == "73" && b[2] == "76" && b[3] == "67")) {
-        return Format::SVG;
-    }
+    // else if ((b[0] == "3C" && b[1] == "3F" && b[2] == "78" && b[3] == "6D" && b[4] == "6C") || (b[0] == "3C" && b[1] == "73" && b[2] == "76" && b[3] == "67")) {
+    //     return Format::SVG;
+    // }
 
     else {
         std::vector<std::string> str;
@@ -228,10 +228,10 @@ Format GetFormatFromBytes(const std::string& bytes, size_t size) {
             str.push_back(b[i]);
         }
 
-        // if ((str[0] == "3C" && str[1] == "3F" && str[2] == "78" && str[3] == "6D" && str[4] == "6C") || (str[0] == "3C" && str[1] == "73" && str[2] == "76" && str[3] == "67")) {
-        //     return Format::SVG;
-        // }
-        
+        if ((str[0] == "3C" && str[1] == "3F" && str[2] == "78" && str[3] == "6D" && str[4] == "6C") || (str[0] == "3C" && str[1] == "73" && str[2] == "76" && str[3] == "67")) {
+            return Format::SVG;
+        }
+
         return Format::REFUSE;
     }
 
