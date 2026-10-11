@@ -6,9 +6,7 @@ using int64 = long long;
 
 struct Audio
 {
-    Audio(std::string name, int64 frequence, int canaux, int64 bits, int duree, int64 fichier) : 
-            name(name), frequence(frequence), canaux(canaux), 
-            bits(bits), duree(duree), fichier(fichier) {}
+    Audio(std::string name, int64 frequence, int canaux, int64 bits, int duree, int64 fichier) : name(name), frequence(frequence), canaux(canaux), bits(bits), duree(duree), fichier(fichier) {}
 
     std::string name;
     int canaux, duree;
@@ -35,7 +33,7 @@ int main() {
         audios.push_back(Audio(name, frequence, canaux, bits, duree, fichier));
     }
 
-    int refuses = 0, flux;
+    int refuses = 0, flux = 0;
     int64 memoire = 0;
 
     for(auto& audio : audios) {
