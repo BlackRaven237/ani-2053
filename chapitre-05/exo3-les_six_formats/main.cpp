@@ -9,7 +9,7 @@ struct Format {
     int bpp;
     bool couleur, transparence, flottants;
 
-    long long CalculateMemory(int w, int h) {
+    long long CalculateMemory(long long w, long long h) {
         return w * h * bpp;
     }
 
@@ -92,7 +92,7 @@ std::string GetLosts(const Format& source, const Format& target) {
 }
 
 int main () {
-    int w, h, N;
+    long long w, h, N;
 
     std::cin >> w >> h; 
     if (w < 1 || h < 1) return -1;
