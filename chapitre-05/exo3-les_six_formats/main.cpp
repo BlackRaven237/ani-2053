@@ -82,9 +82,9 @@ std::string GetLosts(const Format& source, const Format& target) {
     
     if (source.flottants && !target.flottants) {
         if (result == "AUCUNE") { 
-            result = "ETENDU"; 
+            result = "ETENDUE"; 
         } else {
-            result = result + "+ETENDU";
+            result = result + "+ETENDUE";
         }
     }
 
