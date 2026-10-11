@@ -128,6 +128,7 @@ int main () {
         if (pertes == "AUCUNE") {
             sans_pertes++;
         }
+        
         total = total + target_memory;
 
         std::cout << sources[i].name << " " << targets[i].name
