@@ -6,11 +6,15 @@ using int64 = long long;
 
 struct Audio
 {
-    Audio(std::string name, int64 frequence, int canaux, int64 bits, int duree, int64 fichier) : name(name), frequence(frequence), canaux(canaux), bits(bits), duree(duree), fichier(fichier) {}
+    Audio(std::string name, int64 frequence, int64 canaux, int64 bits, int64 duree, int64 fichier) : 
+    name(name), frequence(frequence), canaux(canaux), bits(bits), duree(duree), fichier(fichier) {}
 
     std::string name;
-    int canaux, duree;
-    int64 frequence, bits, fichier; 
+    int64 frequence;
+    int64 canaux;
+    int64 bits;
+    int64 duree;
+    int64 fichier; 
 };
 
 int64 CalculateBrut(const Audio& audio);
@@ -25,7 +29,7 @@ int main() {
     std::vector<Audio> audios;
     for (int i=0; i<N; i++) {
         std::string name;
-        int canaux, duree;
+        int64 canaux, duree;
         int64 frequence, bits, fichier; 
 
         std::cin >> name >> frequence >> canaux >> bits >> duree >> fichier;
