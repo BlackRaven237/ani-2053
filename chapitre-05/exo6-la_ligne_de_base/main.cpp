@@ -121,7 +121,7 @@ int main () {
 
         int k = GetCorrection(texte[i], texte[i+1], pairs);
         
-        std::cout << "\n Correction: " << k << "\n";
+        //std::cout << "\n Correction: " << k << "\n";
 
         x = x + k;
     }
