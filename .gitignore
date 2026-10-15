@@ -23,6 +23,7 @@ NkCanvasKit/
 **/include/NkCanvasKit/
 
 *-Kit/**
+**/*-Kit/include/
 
 Resources/*
 
