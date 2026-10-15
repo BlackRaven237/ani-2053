@@ -22,6 +22,8 @@ NkCanvasKit/
 **/NkCanvasKit/
 **/include/NkCanvasKit/
 
+*-Kit/**
+
 Resources/*
 
 logs/*
