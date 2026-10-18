@@ -1,0 +1,6 @@
+Unprotected: 31.7823, 32.3063, 32.4615, 2818135 : 32.3063
+Mutex: 19.18, 19.1513, 19.0807, 8000000 : 19.0807
+Atomic: 174.592, 184.293, 177.094, 8000000 : 177.094
+Local: 30.1161, 31.7554, 30.6168, 8000000 : 30.6168
+The cheapest: Mutex,
+Why: Because it takes less time than the 3 others and it's also a good choice for synchronizing threads 
