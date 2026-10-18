@@ -1,0 +1,6 @@
+Task: Sum 1st 1000 real numbers then multiply by index i, 
+Pool: 0.758753 1.5557 0.880469, 
+Threads: 10.4489 10.9811 12.7451, 
+Workers: 4, 
+Long task: 22.881 95.6001, 
+Why: Pool parallelizes his jobs with each of it's workers while Threads creates a new thread before assigning it's job. This time changes because each job will now needs a bigger completion time
