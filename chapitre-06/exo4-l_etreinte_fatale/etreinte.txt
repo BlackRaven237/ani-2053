@@ -1,0 +1,4 @@
+Observation: The frozen program waits for one of the two mutexes to be released in order to continue execution, 
+Pause: Thread A waits for mutex m2 to be released at line 24 while Thread B waits for mutex m1 at line 31, 
+Correction: We change the order in which each mutex was locked - since Thread B is launched before Thread A, Thread A should wait for mutex m2 to be released while Thread B continues it's execution until it releases both mutexes
+Rule: In order to avoid a deadlock, we should be careful about the order in which we lock mutexes.
