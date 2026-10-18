@@ -1,0 +1,14 @@
+Ten totals:
+1799522
+2293844
+1999936
+2240200
+2818135
+1902331
+3678962
+7394860
+1604998
+1859305
+One thread: 1000000, 
+Release: 2359399, 2294034, 3302112
+Why: when two threads access the same data in our case compteur without synchronisation, it's leads to a situation called Data Race. In our case, when building in Release mode we get approximately the same effects as in Debug.
