@@ -12,18 +12,8 @@ Build/*
 
 .jenga-typings
 
-NkWindowKit/
-
-NkCanvasKit/
-
-**/NkWindowKit/
-**/include/NkWindowKit/
-
-**/NkCanvasKit/
-**/include/NkCanvasKit/
-
-*-Kit/**
-**/*-Kit/include/
+Kits/**
+Kits/*/include/**
 
 Resources/*
 
