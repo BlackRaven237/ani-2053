@@ -1,0 +1,4 @@
+Image: 5590306, 979.447
+Get: 13493, 6
+IsReady: 11885.6, 6
+What you see: In Get, i see that rectangle lagging each time the image is loaded. In Ready, I still notice the same effect as in Get.
