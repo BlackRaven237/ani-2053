@@ -13,7 +13,8 @@ Build/*
 .jenga-typings
 
 Kits/**
-Kits/*/include/**
+Kits/*-Kit/include/**
+Kits/*-Kit/lib/**
 
 Resources/*
 
