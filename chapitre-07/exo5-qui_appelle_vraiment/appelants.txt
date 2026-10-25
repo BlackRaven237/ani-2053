@@ -1,0 +1,36 @@
+By text:
+command - grep -rn "Draw" Kits/Canvas-Kit/include/ chapitre-07/exo5-qui_appelle_vraiment/appelants.cpp | tee chapitre-07/exo5-qui_appelle_vraiment/results.txt
+result - checkout results.txt 
+
+By the stack:
+We use gdb debugger to get all function calls leading to our own function (Draw)
+
+#0  Object::Draw (this=0x7fffffffce30, target=..., states=...)
+    at /home/coderaven/Desktop/ENSPY Notes/L2/Semestre I/ANI-2053 : Coder au service du Concept Art d’un Game Director (Unreal)/ani-2053/chapitre-07/exo5-qui_appelle_vraiment/appelants.cpp:15
+#1  0x000055555558cae6 in nkentseu::renderer::NkRenderTarget::Draw (
+    this=0x555555d9e4d0, drawable=..., states=...)
+    at Kits/Canvas-Kit/include/NKCanvas/Renderer/Targets/NkRenderTarget.h:112
+#2  0x000055555558bbbb in MyApp::OnRender (this=0x7fffffffc920, 
+    target=...)
+    at /home/coderaven/Desktop/ENSPY Notes/L2/Semestre I/ANI-2053 : Coder au service du Concept Art d’un Game Director (Unreal)/ani-2053/chapitre-07/exo5-qui_appelle_vraiment/appelants.cpp:36
+#3  0x000055555558d375 in nkentseu::renderer::NkCanvasApp::Execute (
+    this=0x7fffffffc920, state=...)
+    at /home/coderaven/Desktop/Nkentseu/Kernel/Runtime/NKCanvas/src/NKCanvas/App/NkCanvasApp.cpp:218
+#4  0x000055555558abe2 in nkentseu::renderer::NkCanvasApp::Run<MyApp>
+    (state=...)
+    at Kits/Canvas-Kit/include/NKCanvas/App/NkCanvasApp.h:204
+#5  0x000055555558a605 in nkmain (state=...)
+    at /home/coderaven/Desktop/ENSPY Notes/L2/Semestre I/ANI-2053 : Coder au service du Concept Art d’un Game Director (Unreal)/ani-2053/chapitre-07/exo5-qui_appelle_vraiment/appelants.cpp:44
+#6  0x000055555558a554 in main (argc=1, argv=0x7fffffffd078)
+    at Kits/Canvas-Kit/include/NKWindow/EntryPoints/NkXLib.h:40
+
+The differences:
+As first difference, we can notice the size of both output. By text, has up to 800 lines while By Stack has only 6.
+This can be explained by the fact that by text, we searched all possibles occurences of the word 'Draw' in 'include/'
+
+Another difference is precision. By text, shows us as bunch of occurences with some not even related to what we're 
+working on while by Stack, shows us all function calls leading to function we are actually searching for.
+
+Nevertheless, By Text has a small advantage over By stack. By text, we can see the entire function signatures which is
+beginner-friendly while By Stack is a little bit more technical and thus requires some level of experience especially 
+with debuggers 
