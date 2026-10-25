@@ -1,0 +1,14 @@
+The jumps: 
+1 - Implementation/Override of NkRenderTarget Clear() virtual method which takes a color
+2 - Override of mBackend Clear() method in NkRenderer2D which takes a color
+3 - Clear() pure virtual function in NkIRenderer2D interface which still takes a color
+
+Stop:
+I choosed to stop at 3 : at NkIRenderer2D's Clear() pure virtual function
+
+Why there:
+Because at this level no further implementation could be found since it's a virtual function
+
+What I know now:
+I now know that when using target.Clear() at the OnRender() method in an NkCanvas App, this call passes through 3 different calls
+up to the NkIRenderer2D's Clear() pure virtual function. 
