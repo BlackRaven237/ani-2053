@@ -5,7 +5,10 @@ From the output below using the command 'grep -rn "NkTransformable.h" Kits/Canva
 Kits/Canvas-Kit/include/NKCanvas/Renderer/Shapes/NkShape.h:30:#include "NKCanvas/Renderer/Core/NkTransformable.h"
 Kits/Canvas-Kit/include/NKCanvas/Renderer/Core/NkTransformable.h:3:// NkTransformable.h — Base class fournissant position/rotation/scale/origin
 Kits/Canvas-Kit/include/NKCanvas/Renderer/Resources/NkSprite.h:28:#include "NKCanvas/Renderer/Core/NkTransformable.h"
-So we can conclude NkShape.h and NkSprite.h both uses NkTransformable.
+
+So we can conclude in both NkShape.h and NkSprite.h the classes NkShape and NkSprite both inherit NkTransformable.
+class NkShape : public NkTransformable, public NkDrawable { /*...*/ }
+class NkSprite : public NkTransformable, public NkDrawable { /*...*/ }
 
 Ce qu'il promet : It promises to perform Translation, Rotation and Enlargement or Reduction(Scaling) on objects.
 
