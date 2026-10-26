@@ -1,12 +1,12 @@
-What it owns: It has an origin, rotation, scale and a position.
+Ce qu'il possède : It has an origin, rotation, scale and a position.
  
-Who calls it: 
+Qui l'appelle : 
 From the output below using the command 'grep -rn "NkTransformable.h" Kits/Canvas-Kit/include', we get
 Kits/Canvas-Kit/include/NKCanvas/Renderer/Shapes/NkShape.h:30:#include "NKCanvas/Renderer/Core/NkTransformable.h"
 Kits/Canvas-Kit/include/NKCanvas/Renderer/Core/NkTransformable.h:3:// NkTransformable.h — Base class fournissant position/rotation/scale/origin
 Kits/Canvas-Kit/include/NKCanvas/Renderer/Resources/NkSprite.h:28:#include "NKCanvas/Renderer/Core/NkTransformable.h"
 So we can conclude NkShape.h and NkSprite.h both uses NkTransformable.
 
-What it promises: It promises to perform Translation, Rotation and Enlargement or Reduction(Scaling) on objects.
+Ce qu'il promet : It promises to perform Translation, Rotation and Enlargement or Reduction(Scaling) on objects.
 
-What I did not read: The GetTransform() and GetInverseTransform() methods. 
+Ce que je n'ai pas lu : GetTransform() and GetInverseTransform() methods. 
