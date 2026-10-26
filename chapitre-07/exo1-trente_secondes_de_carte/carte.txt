@@ -1,13 +1,12 @@
 Module: NKFileSystem 
 
-From the project: This module
+D'après le projet : 
 - Detects specific platforms such as Windows, Linux or Android
 - Uses Nkentseu home-made STL features (containers) such as NKVector
 - Uses Memory and Threads
 - Neither uses network nor a renderer
 - Doesn't read events
-
-After the header: Kits/Canvas-Kit/include/NKFileSystem/NkFileSystem.h
+Après l'en-tête : Kits/Canvas-Kit/include/NKFileSystem/NkFileSystem.h
 #include "NKFileSystem/NkFileSystemApi.h"
 #include "NKCore/NkTypes.h"
 #include "NKContainers/String/NkString.h"
@@ -17,5 +16,5 @@ After the header: Kits/Canvas-Kit/include/NKFileSystem/NkFileSystem.h
 As said above, i can see this module effectively use the Nkentseu home-made containers but we can't directly notice 
 all the remaining dependencies.
 
-My mistakes: From the project file, i thought all dependencies were directly used in this module which was wrong, since
+Mes erreurs : From the project file, i thought all dependencies were directly used in this module which was wrong, since
 some of them are placed to be dependencies for other dependencies.
