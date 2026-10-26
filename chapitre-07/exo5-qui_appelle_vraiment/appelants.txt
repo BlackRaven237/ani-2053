@@ -1,8 +1,8 @@
-By text:
+Par le texte :
 command - grep -rn "Draw" Kits/Canvas-Kit/include/ chapitre-07/exo5-qui_appelle_vraiment/appelants.cpp | tee chapitre-07/exo5-qui_appelle_vraiment/results.txt
 result - checkout results.txt 
 
-By the stack:
+Par la pile :
 We use gdb debugger to get all function calls leading to our own function (Draw)
 
 #0  Object::Draw (this=0x7fffffffce30, target=..., states=...)
@@ -24,7 +24,7 @@ We use gdb debugger to get all function calls leading to our own function (Draw)
 #6  0x000055555558a554 in main (argc=1, argv=0x7fffffffd078)
     at Kits/Canvas-Kit/include/NKWindow/EntryPoints/NkXLib.h:40
 
-The differences:
+Les différences :
 As first difference, we can notice the size of both output. By text, has up to 800 lines while By Stack has only 6.
 This can be explained by the fact that by text, we searched all possibles occurences of the word 'Draw' in 'include/'
 
