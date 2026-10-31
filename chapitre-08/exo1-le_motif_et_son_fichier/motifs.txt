@@ -1,0 +1,9 @@
+Stratégie : 
+Fabrique : 
+Façade :
+Patron de méthode :
+Observateur :
+Singleton : 
+Adaptateur :
+Composite : 
+Commande :
