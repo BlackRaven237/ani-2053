@@ -1,2 +1,11 @@
 Situations :
+The player holds the right arrow - (pull) this event lasts, Kits/Canvas-Kit/include/NKEvent/NkEventDispatcher.h:263: class NkInputQuery {}
+He presses Escape - (push) it happens at an instance, Kits/Canvas-Kit/include/NKEvent/NkEventDispatcher.h:113: class NkEventDispatcher {}              
+We want the position of the mouse - (pull) this event lasts, Kits/Canvas-Kit/include/NKEvent/NkEventDispatcher.h:263: class NkInputQuery {}
+A file is dropped on the window - (push) it happens at an instance, Kits/Canvas-Kit/include/NKEvent/NkEventDispatcher.h:113: class NkEventDispatcher {}
+The window is resized - (pull) this event lasts, Kits/Canvas-Kit/include/NKEvent/NkEventDispatcher.h:263: class NkInputQuery {}
+The player double-clicks - (push) it happens at an instance, Kits/Canvas-Kit/include/NKEvent/NkEventDispatcher.h:113: class NkEventDispatcher {}
+
 Les deux bogues :
+Using the Push model for holding the right arrow - Player movement would rely on a key-repeat rate, resulting in lagging continuous movement.
+Using the Pull model for pressing Escape - If polled a quick press and release between polling cycles could be missed completely.
