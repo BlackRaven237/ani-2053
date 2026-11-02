@@ -1,4 +1,40 @@
 Virtuelles pures :
+with hands - 30 pure virtual functions and 15 virtual functions with implementations
+using grep - 30 pure virtual functions
+
 Dorsaux :
-Ce que chacun écrit :
-Le coût :
+using find Kits/Canvas-Kit/include/NKCanvas/Backend -name "*.h"
+
+Kits/Canvas-Kit/include/NKCanvas/Backend/Software/NkSoftwareComputeContext.h
+Kits/Canvas-Kit/include/NKCanvas/Backend/Software/NkSWPixel.h
+Kits/Canvas-Kit/include/NKCanvas/Backend/Software/NkSoftwareRenderer2D.h
+Kits/Canvas-Kit/include/NKCanvas/Backend/Software/NkSoftwareContext.h
+Kits/Canvas-Kit/include/NKCanvas/Backend/Metal/NkMetalContext.h
+Kits/Canvas-Kit/include/NKCanvas/Backend/Metal/NkMetalComputeContext.h
+Kits/Canvas-Kit/include/NKCanvas/Backend/Vulkan/NkVulkanRenderer2D.h
+Kits/Canvas-Kit/include/NKCanvas/Backend/Vulkan/NkVulkanComputeContext.h
+Kits/Canvas-Kit/include/NKCanvas/Backend/Vulkan/NkVulkanContext.h
+Kits/Canvas-Kit/include/NKCanvas/Backend/Vulkan/NkVulkanShaderCompiler.h
+Kits/Canvas-Kit/include/NKCanvas/Backend/Vulkan/NkVulkanContextData.h
+Kits/Canvas-Kit/include/NKCanvas/Backend/OpenGL/NkOpenGLComputeContext.h
+Kits/Canvas-Kit/include/NKCanvas/Backend/OpenGL/NkOpenGLRenderer2D.h
+Kits/Canvas-Kit/include/NKCanvas/Backend/OpenGL/NkOpenGLContextData.h
+Kits/Canvas-Kit/include/NKCanvas/Backend/OpenGL/NkOpenGLContext.h
+Kits/Canvas-Kit/include/NKCanvas/Backend/DirectX/NkDX12ComputeContext.h
+Kits/Canvas-Kit/include/NKCanvas/Backend/DirectX/NkDX11ComputeContext.h
+Kits/Canvas-Kit/include/NKCanvas/Backend/DirectX/NkDXContext.h
+Kits/Canvas-Kit/include/NKCanvas/Backend/DirectX/NkDX11Renderer2D.h
+Kits/Canvas-Kit/include/NKCanvas/Backend/DirectX/NkDirectXContextData.h
+Kits/Canvas-Kit/include/NKCanvas/Backend/DirectX/NkDX12Renderer2D.h
+
+Ce que chacun écrit : NkBatchRenderer2D inherit NkIRenderer2D and overrides 37 virtual functions. 
+it is also the parent of the following backends
+Kits/Canvas-Kit/include/NKCanvas/Backend/DirectX/NkDX12Renderer2D.h
+Kits/Canvas-Kit/include/NKCanvas/Backend/Software/NkSoftwareRenderer2D.h
+Kits/Canvas-Kit/include/NKCanvas/Backend/Vulkan/NkVulkanRenderer2D.h
+Kits/Canvas-Kit/include/NKCanvas/Backend/OpenGL/NkOpenGLRenderer2D.h
+Kits/Canvas-Kit/include/NKCanvas/Backend/DirectX/NkDX11Renderer2D.h
+Kits/Canvas-Kit/include/NKCanvas/Backend/DirectX/NkDX12Renderer2D.h
+
+Le coût : The cost of adding a new backend is relatively low, all we need is just to make proper 
+implementations of NkIRenderer2D virtual methods. So in essence we are just adding a new implementation.
