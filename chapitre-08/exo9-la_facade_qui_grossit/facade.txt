@@ -1,4 +1,49 @@
-Publiques :
-Utiles :
-Les autres :
-Le rapport :
+Publiques : 24 public methods (overloads included)
+virtual void Clear(const NkColor2D &color = NkColor2D::Black) = 0;
+virtual void Display() = 0;
+virtual void SetView(const NkView2D &view) = 0;
+virtual NkView2D GetView() const = 0;
+virtual NkView2D GetDefaultView() const = 0;
+virtual void ResetView();
+virtual bool IsViewCustom() const;
+virtual void SetViewport(NkRect2i viewport) = 0;
+virtual NkRect2i GetViewport() const = 0;
+virtual void SetResizePolicy(NkResizePolicy policy, NkVec2f designSize = NkVec2f{0.f, 0.f});
+virtual NkResizePolicy GetResizePolicy() const;
+virtual NkVec2f GetDesignSize() const;
+virtual math::NkVec2u GetSize() const = 0;
+void Draw(const NkDrawable &drawable, const NkRenderStates &states = NkRenderStates::Default());
+void Draw(const NkVertexArray &va, const NkRenderStates &states = NkRenderStates::Default());
+virtual void Draw(const NkVertex *vertices, uint32 count, NkPrimitiveType primitive, const NkRenderStates &states = NkRenderStates::Default()) = 0;
+void Draw(const NkIDrawable2D &drawable);
+virtual NkVec2f MapPixelToCoords(NkVec2i pixel) const = 0;
+virtual NkVec2i MapCoordsToPixel(NkVec2f point) const = 0;
+virtual NkIRenderer2D *GetRenderer() noexcept = 0;
+virtual const NkIRenderer2D *GetRenderer() const noexcept = 0;
+virtual NkRenderer2D &GetRenderer2D() noexcept = 0;
+virtual const NkRenderer2D &GetRenderer2D() const noexcept = 0;
+virtual bool Capture(const char *path);
+
+Utiles : 7 of them are quiet useful
+virtual void Clear(const NkColor2D &color = NkColor2D::Black) = 0;
+virtual void Display() = 0;
+void Draw(const NkDrawable &drawable, const NkRenderStates &states = NkRenderStates::Default());
+void Draw(const NkVertexArray &va, const NkRenderStates &states = NkRenderStates::Default());
+virtual void Draw(const NkVertex *vertices, uint32 count, NkPrimitiveType primitive, const NkRenderStates &states = NkRenderStates::Default()) = 0;
+virtual NkRenderer2D &GetRenderer2D() noexcept = 0;
+virtual const NkRenderer2D &GetRenderer2D() const noexcept = 0;
+
+Les autres : For the remaining ones,
+- SetView(), GetView(), GetDefaultView(), ResetView(), IsViewCustom(), SetViewport(), GetViewport() are used
+to Manage views(Camera)
+- SetResizePolicy(), GetResizePolicy(), GetDesignSize() are Resize policies
+- GetSize() is used to access our Target size in pixels:
+- MapCoordsToPixel(), MapPixelToCoords() are mapping relations from pixels to coords and vice-versa
+- GetRenderer(), GetRenderer() are used to access our native renderer
+- Capture() for screenshots
+
+void Draw(const NkIDrawable2D &drawable) is the only method said to be temporary and will be removed
+
+Le rapport : we obtain a ratio of 7:17. Yes, This Facade pattern effectively keeps its promise because
+in a real project i may have to use more of it's public methods like those to manage the views
+or that to access the native renderer.
