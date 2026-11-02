@@ -1,9 +1,10 @@
-Stratégie : 
-Fabrique : 
-Façade :
-Patron de méthode :
-Observateur :
-Singleton : 
-Adaptateur :
-Composite : 
-Commande :
+Stratégie : Kits/Canvas-Kit/include/NKCanvas/Renderer/Core/NkIRenderer2D.h:46: class NkIRenderer2D {}
+Fabrique : Kits/Canvas-Kit/include/NKCanvas/Factory/NkContextFactory.h:30: 	class NkContextFactory {}
+Façade : Kits/Canvas-Kit/include/NKWindow/Core/NkWindow.h:86:  class NkWindow {}
+Patron de méthode : Kits/Canvas-Kit/include/NKCanvas/App/NkCanvasApp.h:255: virtual bool OnInit() {}
+Observateur : Kits/Canvas-Kit/include/NKEvent/NkEvent.h:629: using EventObserver = NkFunction<void(NkEvent &)>;
+Singleton : Kits/Canvas-Kit/include/NKMath/NkRandom.h:81: static NkRandom &Instance() noexcept {}
+Adaptateur : Kits/Canvas-Kit/include/NKEvent/NkEventSystem.h:415: void Enqueue_Public(NkEvent &evt, NkWindowId winId);
+Composite : Kits/Canvas-Kit/include/NKNetwork/Protocol/NkBitStream.h:264: void WriteVec3f(const NkVec3f &v) noexcept;
+Commande : Kits/Canvas-Kit/include/NKEvent/NkEventDispatcher.h:900: class NkActionManager {}.
+The Observator pattern is the closest to this pattern
