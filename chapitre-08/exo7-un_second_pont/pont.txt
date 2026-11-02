@@ -1,5 +1,22 @@
-Le premier pont :
-Le second pont :
-Combien de méthodes : 
-Les données :
-Dans le kit :
+Le premier pont : Kits/Canvas-Kit/include/NKCanvas/UI/NkGuiCanvasBackend.h:26
+bool Init(nkentseu::renderer::NkIRenderer2D *renderer);
+bool UploadFontGray8(nkentseu::uint32 texId, const nkentseu::uint8 *gray, nkentseu::int32 w, nkentseu::int32 h);
+bool UploadImageRGBA(nkentseu::uint32 texId, const nkentseu::uint8 *rgba, nkentseu::int32 w, nkentseu::int32 h);
+void Submit(const nkentseu::nkgui::NkGuiDrawList &dl, nkentseu::uint32 fbW, nkentseu::uint32 fbH);
+
+It recieves a list of drawing commands `NkGuiDrawList` meaning it translates each command to an NkIRenderer2D call.
+Le second pont : Translate NkGuiDrawList into NkImages (NkGuiImageBackend)
+Combien de méthodes : 0, I will only modify Init() and Submit() to draw into an NkImage. 
+
+Les données : NkImage
+
+Dans le kit : Kits/Canvas-Kit/include/NKGui/Widgets/NkGuiWidgets.h:163-165
+NKENTSEU_NKGUI_API void Image(NkGuiContext &ctx, uint32 texId, float32 w, float32 h,
+									  NkColor tint = NkColor{255, 255, 255, 255}, NkVec2 uv0 = NkVec2{0.f, 0.f},
+									  NkVec2 uv1 = NkVec2{1.f, 1.f}) noexcept;
+
+In the description i proposed, we could use an NKImage as a private member and add no other method
+to the NkGuiCanvasBackend and while not rename it as NkGuiImageBackend.
+
+But what i found in the Kit uses a complete different approach. that is, the list of drawing commands
+is stored in an NkGuiContext and only a function is used to write those commands into an image. 
