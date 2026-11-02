@@ -1,3 +1,33 @@
 Recherche :
+grep -rn "NkOpenGLRenderer2D" Kits/Canvas-Kit/include
+13
+Kits/Canvas-Kit/include/NKCanvas/Renderer/Core/NkIRenderer2D.h:15://   Backends/OpenGL/NkOpenGLRenderer2D
+Kits/Canvas-Kit/include/NKCanvas/Renderer/Core/NkRenderer2D.h:19://   NkSoftwareRenderer2D / NkOpenGLRenderer2D / NkVulkanRenderer2D / NkDX11Renderer2D / NkDX12Renderer2D
+Kits/Canvas-Kit/include/NKCanvas/Renderer/Resources/NkTextureBackend.h:22:// EXEMPLE D'ENREGISTREMENT (OpenGL, en fin de NkOpenGLRenderer2D::Initialize)
+Kits/Canvas-Kit/include/NKCanvas/Renderer/Resources/NkTextureBackend.h:24://       &NkOpenGLRenderer2D::CreateGLTexture,
+Kits/Canvas-Kit/include/NKCanvas/Renderer/Resources/NkTextureBackend.h:25://       &NkOpenGLRenderer2D::UpdateGLTexture,
+Kits/Canvas-Kit/include/NKCanvas/Renderer/Resources/NkTextureBackend.h:26://       &NkOpenGLRenderer2D::DeleteGLTexture,
+Kits/Canvas-Kit/include/NKCanvas/Renderer/Resources/NkTextureBackend.h:27://       &NkOpenGLRenderer2D::SetGLTextureFilter,
+Kits/Canvas-Kit/include/NKCanvas/Renderer/Resources/NkTextureBackend.h:28://       &NkOpenGLRenderer2D::SetGLTextureWrap,
+Kits/Canvas-Kit/include/NKCanvas/Backend/OpenGL/NkOpenGLRenderer2D.h:3:// NkOpenGLRenderer2D.h — OpenGL 2D rendererbackend
+Kits/Canvas-Kit/include/NKCanvas/Backend/OpenGL/NkOpenGLRenderer2D.h:13:                class NkOpenGLRenderer2D final : public NkBatchRenderer2D {
+Kits/Canvas-Kit/include/NKCanvas/Backend/OpenGL/NkOpenGLRenderer2D.h:15:                                NkOpenGLRenderer2D() = default;
+Kits/Canvas-Kit/include/NKCanvas/Backend/OpenGL/NkOpenGLRenderer2D.h:17:                                ~NkOpenGLRenderer2D() override {
+Kits/Canvas-Kit/include/NKGui/Core/NkGuiDrawListRaster.h:35://      OpenGL (`NkOpenGLRenderer2D::SetBlendMode`) : Screen ONE /
+
+NkRenderer2DFactory.h does not name NkOpenGLRenderer2D
+
 Hors de son dossier :
-Conclusion :
+All the results below are comments
+Kits/Canvas-Kit/include/NKCanvas/Renderer/Core/NkIRenderer2D.h:15://   Backends/OpenGL/NkOpenGLRenderer2D
+Kits/Canvas-Kit/include/NKCanvas/Renderer/Core/NkRenderer2D.h:19://   NkSoftwareRenderer2D / NkOpenGLRenderer2D / NkVulkanRenderer2D / NkDX11Renderer2D / NkDX12Renderer2D
+Kits/Canvas-Kit/include/NKCanvas/Renderer/Resources/NkTextureBackend.h:22:// EXEMPLE D'ENREGISTREMENT (OpenGL, en fin de NkOpenGLRenderer2D::Initialize)
+Kits/Canvas-Kit/include/NKCanvas/Renderer/Resources/NkTextureBackend.h:24://       &NkOpenGLRenderer2D::CreateGLTexture,
+Kits/Canvas-Kit/include/NKCanvas/Renderer/Resources/NkTextureBackend.h:25://       &NkOpenGLRenderer2D::UpdateGLTexture,
+Kits/Canvas-Kit/include/NKCanvas/Renderer/Resources/NkTextureBackend.h:26://       &NkOpenGLRenderer2D::DeleteGLTexture,
+Kits/Canvas-Kit/include/NKCanvas/Renderer/Resources/NkTextureBackend.h:27://       &NkOpenGLRenderer2D::SetGLTextureFilter,
+Kits/Canvas-Kit/include/NKCanvas/Renderer/Resources/NkTextureBackend.h:28://       &NkOpenGLRenderer2D::SetGLTextureWrap,
+Kits/Canvas-Kit/include/NKGui/Core/NkGuiDrawListRaster.h:35://      OpenGL (`NkOpenGLRenderer2D::SetBlendMode`) : Screen ONE /
+
+Conclusion : We notice that outside OpenGL Backend no piece of code uses NkOpenGLRenderer2D concrete class. So we conclude by saying 
+that only the Factory knows about this concrete class.
