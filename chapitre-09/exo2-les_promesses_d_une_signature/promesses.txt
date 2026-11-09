@@ -1,0 +1,5 @@
+method : WorldToLocal, promises : 3
+method : HasSelection, promises : 1
+method : HitTest, promises : 2
+method : WorldToPixel, promises : 3
+method : ZoomAtPixel, promises : 2

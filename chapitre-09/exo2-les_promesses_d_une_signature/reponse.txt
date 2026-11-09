@@ -1,0 +1,3 @@
+The strongest promise : const, 
+The compiler message :, 
+A promise the signature does not make :
