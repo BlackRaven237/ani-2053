@@ -1,0 +1,5 @@
+file : main.cpp, lines : 2138, includes : NKWindow.h NKMain.h NkEvent.h NkWindowEvent.h NkMouseEvent.h NkKeyboardEvent.h NkDropEvent.h NkLog.h NkTime.h NkRenderWindow.h NkContextDesc.h NkGraphicsApi.h NkTexture.h NkSprite.h NkFont.h NkDirectory.h NkFile.h NKImage.h windows.h NKGui.h NkGuiCanvasBackend.h NkUniquePtr.h NkClock.h NkDialogs.h NkTraits.h  → NkRefView.h → NkRefBoard.h → NkRefFile.h cstdio.h cstdlib.h cstring.h
+file : NkRefView.h, lines : 86, includes : NKMath.h
+file : NkRefBoard.h, lines : 371, includes : NKMath.h NkVector.h NkString.h
+file : NkRefFile.h, lines : 224, includes :  → NkRefBoard.h → NkRefView.h NkVector.h
+commit : 9fff463e9 

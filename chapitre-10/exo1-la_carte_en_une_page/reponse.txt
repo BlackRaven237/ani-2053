@@ -1,0 +1,7 @@
+What each file owns :
+main.cpp(glue) owns a window, a loop, inputs and a renderer
+NkRefView is a view that owns a center and a zoom
+NkRefBoard owns Items and Strokes
+NkRefFile owns an Image, a Reader and a loaded Item 
+The share of the pure files : 16.21%
+The two files I would keep : NkRefBoard NkRefView
